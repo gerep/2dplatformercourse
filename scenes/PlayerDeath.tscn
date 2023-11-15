@@ -136,7 +136,7 @@ script = ExtResource( 1 )
 autoplay = "death"
 anims/death = SubResource( 2 )
 
-[node name="Visuals" type="Node" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Visuals"]
 texture = ExtResource( 2 )
