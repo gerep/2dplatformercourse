@@ -8,7 +8,7 @@
 radius = 16.0
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 4, 4 )
+extents = Vector2( 8, 4 )
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 11.0
