@@ -3,6 +3,7 @@ extends KinematicBody2D
 signal died
 
 var playerDeathScene = preload("res://scenes/PlayerDeath.tscn")
+var footstepsParticles = preload("res://scenes/FootstepsParticle.tscn")
 
 enum State { NORMAL, DASHING }
 
@@ -25,6 +26,7 @@ var isDying = false
 
 func _ready():
 	$HazzardArea.connect("area_entered", self, "on_hazzard_area_entered")
+	$AnimatedSprite.connect("frame_changed", self, "on_animated_sprite_frame_changed")
 	defaulHazardMask = $HazzardArea.collision_mask
 
 func _process(delta):
@@ -96,6 +98,9 @@ func process_normal(delta):
 
 	if wasOnFloor and !is_on_floor():
 		$CoyoteTimer.start()
+	
+	if !wasOnFloor and is_on_floor() and !isStateNew:
+		spawn_footsteps(1.5)
 
 	if is_on_floor():
 		hasDoubleJump = true
@@ -139,5 +144,15 @@ func kill():
 
 	emit_signal("died")
 
+func spawn_footsteps(scale = 1):
+	var footstep = footstepsParticles.instance()
+	get_parent().add_child(footstep)
+	footstep.scale = Vector2.ONE * scale
+	footstep.global_position = global_position
+
 func on_hazzard_area_entered(_area2d):
 	call_deferred("kill")
+
+func on_animated_sprite_frame_changed():
+	if $AnimatedSprite.animation == "run" && $AnimatedSprite.frame == 0:
+		spawn_footsteps()
