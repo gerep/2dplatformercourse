@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Flag.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/UI/LevelUI.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/GameCamera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/UI/LevelComplete.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/BaseLevel.gd" type="Script" id=7]
+[ext_resource path="res://resources/decorative_tileset.tres" type="TileSet" id=8]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -17,6 +18,16 @@ levelCompleteScene = ExtResource( 6 )
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
 
 [node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 18, 18 )
+format = 1
+
+[node name="DecorativeTilemap" type="TileMap" parent="."]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 18, 18 )
+format = 1
+
+[node name="ForegroundTilemap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 18, 18 )
 format = 1
@@ -32,6 +43,7 @@ format = 1
 [node name="Collectibles" type="Node" parent="."]
 
 [node name="KillZone" type="Line2D" parent="."]
+visible = false
 position = Vector2( -711, 81 )
 scale = Vector2( 3.15377, 1 )
 points = PoolVector2Array( 0, 0, 540.107, 0 )
