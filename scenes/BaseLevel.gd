@@ -2,9 +2,10 @@ extends Node
 
 signal coin_total_changed
 
-var playerScene = preload("res://scenes/Player.tscn")
+export(PackedScene) var levelCompleteScene
 
-export(PackedScene) var levelCompleteScene 
+var playerScene = preload("res://scenes/Player.tscn")
+var pauseScene = preload("res://scenes/UI/PauseMenu.tscn")
 
 var spawnPosition = Vector2.ZERO
 var currentPlayerNode = null
@@ -18,6 +19,11 @@ func _ready():
 	coin_total_changed(get_tree().get_nodes_in_group("coin").size())
 
 	$Flag.connect("player_won", self, "on_player_won")
+
+func _unhandled_input(event):
+	if event.is_action_pressed("pause"):
+		var pauseInstance = pauseScene.instance()
+		add_child(pauseInstance)
 
 func coin_collected():
 	collectedCoins += 1
