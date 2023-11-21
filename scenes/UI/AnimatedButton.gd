@@ -5,7 +5,7 @@ func _ready():
 	connect("mouse_exited", self, "on_mouse_exited")
 	connect("pressed", self, "on_pressed")
 
-func _process(delta):
+func _process(_delta):
 	# The button size changes during hover animations. This line calculates it's
 	# center on every frame.
 	rect_pivot_offset = rect_min_size / 2
