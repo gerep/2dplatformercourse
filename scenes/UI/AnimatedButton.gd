@@ -17,4 +17,5 @@ func on_mouse_exited():
 	$HoverAnimationPlayer.play_backwards("hover")
 
 func on_pressed():
+	$AudioStreamPlayer.play()
 	$ClickAnimationPlayer.play_backwards("click")

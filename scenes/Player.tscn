@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/character_0000.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/sounds/footstep_concrete_002.ogg" type="AudioStream" id=12]
 [ext_resource path="res://assets/sounds/footstep_concrete_003.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/sounds/footstep_concrete_000.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/impactBell_heavy_004.ogg" type="AudioStream" id=15]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 16.0
@@ -128,6 +129,17 @@ bus = "Footsteps"
 stream = ExtResource( 6 )
 volume_db = -2.0
 bus = "Footsteps"
+
+[node name="DashAudioPlayer" parent="." instance=ExtResource( 4 )]
+enablePitchRandomization = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DashAudioPlayer"]
+stream = ExtResource( 15 )
+bus = "PlayerDash"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="DashAudioPlayer"]
+stream = ExtResource( 15 )
+bus = "PlayerDash"
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.15

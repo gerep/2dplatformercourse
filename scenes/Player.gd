@@ -45,6 +45,7 @@ func change_state(newState):
 
 func process_dash(delta):
 	if isStateNew:
+		$DashAudioPlayer.play()
 		$DashParticles.emitting = true
 		$DashArea/CollisionShape2D.disabled = false
 		$HazzardArea.collision_layer = dashHazardMask
