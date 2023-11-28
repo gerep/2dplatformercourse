@@ -157,6 +157,7 @@ func spawn_footsteps(scale = 1):
 	get_parent().add_child(footstep)
 	footstep.scale = Vector2.ONE * scale
 	footstep.global_position = global_position
+	$FootstepAudioStreamPlayer.play()
 
 func on_hazzard_area_entered(_area2d):
 	call_deferred("kill")
