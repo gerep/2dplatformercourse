@@ -31,7 +31,7 @@ func kill():
 	deathInstance.global_position = global_position
 	if velocity.x > 0:
 		deathInstance.scale = Vector2(-1, 1)
-	
+
 	queue_free()
 
 func on_goal_entered(_aread2d):

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactPlate_light_004.ogg-7f1df3c3509290441ba08bf0a1
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

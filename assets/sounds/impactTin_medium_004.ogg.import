@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactTin_medium_004.ogg-88e0f8c3700a482e226f4953c6c
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactGlass_medium_000.ogg-18dc872ff822d479f23bd1fd2
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactPunch_heavy_004.ogg-c3cf5749745d766d3fc755ba72
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

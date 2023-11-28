@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactWood_heavy_003.ogg-8bffdb16cf6a295d8643d2d45b7
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
